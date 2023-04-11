@@ -1,0 +1,13 @@
+# ┏━━┓╋╋┏━┳┓╋╋┏┳┓┏┳━┓
+# ┗┃┃╋━┳┫━╋╋━┳╋┫┗╋┫━╋━┓┏┓┏┓
+# ┏┃┃┫┃┃┃┏┫┃┃┃┃┃┏┫┃┏┫╋┗┫┗┫┗┓
+# ┗━━┻┻━┻┛┗┻┻━┻┻━┻┻┛┗━━┻━┻━┛
+#
+# by Justin H. Schaaf (https://justinschaaf.com)
+# Version 2023.04.10
+
+# How much damage to deal upon teleporting the entity
+damage: 4.0
+
+# How much to add to tne entity's Y position
+addY: 182.0
