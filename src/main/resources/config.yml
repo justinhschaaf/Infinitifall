@@ -4,10 +4,17 @@
 # ┗━━┻┻━┻┛┗┻┻━┻┻━┻┻┛┗━━┻━┻━┛
 #
 # by Justin H. Schaaf (https://justinschaaf.com)
-# Version 2023.04.10
+# Version 2023.04.11
+
+# Teleports the entity when their Y level is below this level
+tpY: -64.0
+
+# How much to add to the entity's Y position
+# This is intentionally lower than 256 to prevent mobs from instantly despawning
+addY: 246.0
 
 # How much damage to deal upon teleporting the entity
 damage: 4.0
 
-# How much to add to tne entity's Y position
-addY: 182.0
+# Whether to remove non-living entities that can't take void damage
+removeNonLiving: true

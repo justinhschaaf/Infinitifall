@@ -12,15 +12,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Infinitifall extends JavaPlugin implements Listener {
 
-    private double damage = 4.0;
+    private double tpY = -64.0;
     private double addY = 182.0;
+    private double damage = 4.0;
+    private boolean removeNonLiving = true;
 
     @Override
     public void onEnable() {
 
         saveDefaultConfig();
+        tpY = getConfig().getDouble("tpY", -64.0);
+        addY = getConfig().getDouble("addY", 182.0);
         damage = getConfig().getDouble("damage", 4.0);
-        addY = getConfig().getDouble("addY", 4.0);
+        removeNonLiving = getConfig().getBoolean("removeNonLiving", true);
 
         getServer().getPluginManager().registerEvents(this, this);
 
@@ -38,7 +42,7 @@ public final class Infinitifall extends JavaPlugin implements Listener {
 
     private void doCircumnavigation(Entity e) {
 
-        if (e.getLocation().getY() < 0) {
+        if (e.getLocation().getY() < tpY) {
 
             e.teleport(e.getLocation().add(0, addY, 0));
 
@@ -48,7 +52,7 @@ public final class Infinitifall extends JavaPlugin implements Listener {
             if (!voidDamage.isCancelled()) {
 
                 if (e instanceof LivingEntity) ((LivingEntity) e).damage(voidDamage.getDamage());
-                else e.remove();
+                else if (removeNonLiving) e.remove();
 
                 e.setLastDamageCause(voidDamage);
 
