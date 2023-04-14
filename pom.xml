@@ -6,7 +6,7 @@
 
     <groupId>com.justinschaaf</groupId>
     <artifactId>Infinitifall</artifactId>
-    <version>2023.04.11-folia</version>
+    <version>2023.04.11</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
