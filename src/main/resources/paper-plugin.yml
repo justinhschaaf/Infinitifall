@@ -4,3 +4,4 @@ main: com.justinschaaf.infinitifall.Infinitifall
 api-version: 1.19
 author: "justinhschaaf"
 website: "https://github.com/justinhschaaf/Infinitifall"
+folia-supported: true
