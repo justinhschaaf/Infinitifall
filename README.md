@@ -18,6 +18,6 @@ When any entity takes damage from falling in the void, they get teleported upwar
 ## How do I use this?
 
 Drop it into the `/plugins` folder of your [PaperMC](https://papermc.io) server.
-This plugin relies on paper specifically, it won't work on Bukkit or Spigot.
+This plugin relies on Paper or Folia specifically, it won't work on Bukkit or Spigot.
 
 ## [License](/LICENSE.md)
