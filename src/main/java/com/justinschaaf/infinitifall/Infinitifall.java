@@ -44,7 +44,7 @@ public final class Infinitifall extends JavaPlugin implements Listener {
 
         if (e.getLocation().getY() < tpY) {
 
-            e.teleport(e.getLocation().add(0, addY, 0));
+            e.teleportAsync(e.getLocation().add(0, addY, 0));
 
             EntityDamageEvent voidDamage = new EntityDamageEvent(e, EntityDamageEvent.DamageCause.VOID, damage);
             getServer().getPluginManager().callEvent(voidDamage);
