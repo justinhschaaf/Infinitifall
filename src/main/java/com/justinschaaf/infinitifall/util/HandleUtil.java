@@ -1,8 +1,9 @@
 package com.justinschaaf.infinitifall.util;
 
 import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 
-public class HandleUtil {
+public class HandleUtil implements Listener {
     private static Boolean IS_PAPER_FOLIA = null;
     private static boolean tryTeleportAsync() {
         try {

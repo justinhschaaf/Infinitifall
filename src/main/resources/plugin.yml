@@ -5,3 +5,11 @@ api-version: 1.19
 author: "justinhschaaf"
 website: "https://github.com/justinhschaaf/Infinitifall"
 folia-supported: true
+commands:
+  infinitifallreload:
+    usage: /<command>
+    aliases:
+      - ifreload
+permissions:
+  infinitifall.reload:
+    description: Reload configuration

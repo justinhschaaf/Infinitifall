@@ -1,5 +1,7 @@
 package com.justinschaaf.infinitifall;
 
+import com.justinschaaf.infinitifall.command.ReloadCommand;
+import com.justinschaaf.infinitifall.util.HandleUtil;
 import com.justinschaaf.infinitifall.util.MiscUtil;
 import com.justinschaaf.infinitifall.watcher.EventWatcher;
 import io.papermc.paper.event.entity.EntityMoveEvent;
@@ -11,15 +13,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Infinitifall extends JavaPlugin implements Listener {
     public static Infinitifall instance;
-    public static MiscUtil MiscUtil;
-    public static EventWatcher EventWatcher;
     @Override
     public void onEnable() {
 
         instance = this;
         saveDefaultConfig();
-        MiscUtil.register();
         MiscUtil.reload();
+
+        getServer().getPluginManager().registerEvents(instance, instance);
+        getServer().getPluginManager().registerEvents(new EventWatcher(), instance);
+        getServer().getPluginManager().registerEvents(new MiscUtil(), instance);
+        getServer().getPluginManager().registerEvents(new HandleUtil(), instance);
+        instance.getCommand("infinitifallreload").setExecutor(new ReloadCommand());
 
     }
 
