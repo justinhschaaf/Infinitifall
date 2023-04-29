@@ -9,10 +9,12 @@ import org.bukkit.command.CommandSender;
 public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("infinitifall.reload")) return true;
+        if (!sender.hasPermission("infinitifall.reload")) {
+            sender.sendMessage(ChatColor.RED + "You don't have permission to execute this command.");
+            return true;
         try {
             MiscUtil.reload();
-            sender.sendMessage(ChatColor.YELLOW + "InfinitiFall reloaded.");
+            sender.sendMessage(ChatColor.GREEN + "InfinitiFall reloaded.");
         } catch (Exception e) {
             sender.sendMessage(ChatColor.RED + "Something went wrong reloading InfinitiFall, see the console for more.");
             e.printStackTrace();
