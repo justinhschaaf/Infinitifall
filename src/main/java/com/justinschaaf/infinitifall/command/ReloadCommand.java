@@ -12,6 +12,7 @@ public class ReloadCommand implements CommandExecutor {
         if (!sender.hasPermission("infinitifall.reload")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to execute this command.");
             return true;
+        }
         try {
             MiscUtil.reload();
             sender.sendMessage(ChatColor.GREEN + "InfinitiFall reloaded.");
