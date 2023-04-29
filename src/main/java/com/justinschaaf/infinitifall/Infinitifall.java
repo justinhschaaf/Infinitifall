@@ -1,6 +1,7 @@
 package com.justinschaaf.infinitifall;
 
 import com.justinschaaf.infinitifall.util.HandleUtil;
+import com.justinschaaf.infinitifall.util.MiscUtil;
 import io.papermc.paper.event.entity.EntityMoveEvent;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -12,6 +13,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Infinitifall extends JavaPlugin implements Listener {
+    public static Infinitifall instance;
+    public static MiscUtil MiscUtil;
     private double tpY = -64.0;
     private double addY = 182.0;
     private double damage = 4.0;
@@ -20,13 +23,10 @@ public final class Infinitifall extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
 
+        instance = this;
         saveDefaultConfig();
-        tpY = getConfig().getDouble("tpY", -64.0);
-        addY = getConfig().getDouble("addY", 182.0);
-        damage = getConfig().getDouble("damage", 4.0);
-        removeNonLiving = getConfig().getBoolean("removeNonLiving", true);
-
-        getServer().getPluginManager().registerEvents(this, this);
+        MiscUtil.register();
+        MiscUtil.reload();
 
     }
 
