@@ -9,7 +9,7 @@ public class HandleUtil {
             Class.forName("org.bukkit.event.player.PlayerTeleportEvent$TeleportCause");
             return true;
         } catch (ClassNotFoundException ignored) {
-            Bukkit.getLogger().warning("This server does not support Paper API.");
+            Bukkit.getLogger().warning("This server does not support the Paper API, which may cause the plugin to not function properly.");
             return false;
         }
     }
