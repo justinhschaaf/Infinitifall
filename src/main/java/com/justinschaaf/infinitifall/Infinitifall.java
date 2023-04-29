@@ -19,18 +19,20 @@ public final class Infinitifall extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+
         saveDefaultConfig();
         tpY = getConfig().getDouble("tpY", -64.0);
         addY = getConfig().getDouble("addY", 182.0);
         damage = getConfig().getDouble("damage", 4.0);
         removeNonLiving = getConfig().getBoolean("removeNonLiving", true);
+
         getServer().getPluginManager().registerEvents(this, this);
 
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onEntityMove(EntityMoveEvent e) {
-            doCircumnavigation(e.getEntity());
+        doCircumnavigation(e.getEntity());
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -41,9 +43,13 @@ public final class Infinitifall extends JavaPlugin implements Listener {
     private void doCircumnavigation(Entity e) {
         if (e.getLocation().getY() < tpY) {
             if (HandleUtil.isPaperFolia()) {
+
                 e.teleportAsync(e.getLocation().add(0, addY, 0));
+
             } else {
+
                 e.teleport(e.getLocation().add(0, addY, 0));
+
             }
 
             EntityDamageEvent voidDamage = new EntityDamageEvent(e, EntityDamageEvent.DamageCause.VOID, damage);
