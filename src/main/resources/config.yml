@@ -18,3 +18,18 @@ damage: 4.0
 
 # Whether to remove non-living entities that can't take void damage
 removeNonLiving: true
+
+# Messages. Uses legacy color codes.
+messages:
+
+    # Sender doesn't have permissions to run this command
+    errorNoPerms: "&4You don't have permission to execute this command."
+
+    # Sender sent an unknown command
+    errorUnknownCmd: "&4Unknown command. Usage: /infinitifall (reload)"
+
+    # The plugin was successfully reloaded
+    reloadConfirmed: "&aInfinitifall reloaded."
+
+    # Something went wrong reloading
+    reloadErrored: "&4Something went wrong reloading Infinitifall, see the console for more details."

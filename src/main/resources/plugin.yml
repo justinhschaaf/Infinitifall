@@ -6,10 +6,13 @@ author: "justinhschaaf"
 website: "https://github.com/justinhschaaf/Infinitifall"
 folia-supported: true
 commands:
-  infinitifallreload:
-    usage: /<command>
-    aliases:
-      - ifreload
+    infinitifall:
+        # Syntax based off of https://minecraft.fandom.com/wiki/Commands#Command_guide
+        usage: "/infinitifall (reload)"
+        description: "Main command for Infinitifall"
+        aliases:
+            - if
 permissions:
-  infinitifall.reload:
-    description: Reload configuration
+    infinitifall.reload:
+        description: "Reload configuration"
+        default: op
