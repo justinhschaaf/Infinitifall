@@ -45,9 +45,9 @@ public class CommandHandler implements CommandExecutor {
 
         } else unknown = true;
 
-        if (unknown) {
+        // Use this so we get to format the message rather than returning false and having Bukkit/Spigot/Paper do it for us
+        if (unknown)
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Config.msgErrorUnknownCmd));
-        }
 
         return true;
 

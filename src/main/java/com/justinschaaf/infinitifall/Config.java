@@ -7,6 +7,7 @@ public class Config {
     public static double damage;
     public static boolean removeNonLiving;
 
+    // Messages
     public static String msgErrorNoPerms;
     public static String msgErrorUnknownCmd;
     public static String msgReloadConfirmed;
@@ -22,6 +23,7 @@ public class Config {
         damage = plugin.getConfig().getDouble("damage", 4.0);
         removeNonLiving = plugin.getConfig().getBoolean("removeNonLiving", true);
 
+        // Messages
         msgErrorNoPerms = plugin.getConfig().getString("messages.errorNoPerms", "&4You don't have permission to execute this command.");
         msgErrorUnknownCmd = plugin.getConfig().getString("message.errorUnknownCmd", "&4Unknown command. Usage: /infinitifall (reload)");
         msgReloadConfirmed = plugin.getConfig().getString("messages.reloadConfirmed", "&aInfinitifall reloaded.");

@@ -17,6 +17,7 @@
     <build>
         <resources>
             <resource>
+                <!-- Yes, the ${basedir} is necessary... Yes, it's redundant and stupid...  -->
                 <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
